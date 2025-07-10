@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statut de l'attribution</title>
+</head>
+<body>
+    <h1>Statut de l'attribution</h1>
+    {% if allocation %}
+        <p>Appareil ID : {{ allocation[0] }}</p>
+        <p>Utilisateur ID : {{ allocation[1] }}</p>
+        <p>Date d'attribution : {{ allocation[2] }}</p>
+        <p>Date de restitution : {{ allocation[3] }}</p>
+    {% else %}
+        <p>Aucune attribution trouvée.</p>
+    {% endif %}
+    <a href="/allocation/form">Retour</a>
+</body>
+</html>

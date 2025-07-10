@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attribuer un appareil</title>
+</head>
+<body>
+    <h1>Attribuer un appareil</h1>
+    <form method="post" action="/allocation/submit">
+        <label for="utilisateur">Utilisateur :</label>
+        <select name="utilisateur" id="utilisateur">
+            {% for user in utilisateurs %}
+                <option value="{{ user.Id_User }}">{{ user.Nom }} {{ user.Prenom }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="appareil">Appareil :</label>
+        <select name="appareil" id="appareil">
+            {% for appareil in appareils %}
+                <option value="{{ appareil.Id_appareil }}">{{ appareil.Type }} - {{ appareil.Modele }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="enrolement">Enrolement :</label>
+        <select name="enrolement" id="enrolement">
+            {% for enr in enrolements %}
+                <option value="{{ enr.Id_Enrolement }}">{{ enr.Lib_Enrolement }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Attribuer</button>
+    </form>
+</body>
+</html>
